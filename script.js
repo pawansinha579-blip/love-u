@@ -1,7 +1,6 @@
 const noButton = document.querySelector("#no-button");
 const yesButton = document.querySelector("#yes-button");
 const replayButton = document.querySelector("#replay-button");
-const musicButton = document.querySelector("#music-button");
 const backgroundSong = document.querySelector("#background-song");
 const apologyPage = document.querySelector("#apology");
 const lovePage = document.querySelector("#love-letter");
@@ -117,32 +116,25 @@ function revealLovePage() {
   lovePage.querySelector("#love-title").focus({ preventScroll: true });
 }
 
+// Audible autoplay depends on browser permission. Retry on a page interaction.
 async function playBackgroundSong() {
+  if (!backgroundSong.paused) return;
+
   try {
     await backgroundSong.play();
-    musicButton.hidden = false;
-    musicButton.textContent = "Pause our song ♫";
-    musicButton.setAttribute("aria-pressed", "true");
+    document.removeEventListener("pointerdown", playBackgroundSong, true);
+    document.removeEventListener("click", playBackgroundSong, true);
+    document.removeEventListener("keydown", playBackgroundSong, true);
   } catch (error) {
-    musicButton.hidden = false;
-    musicButton.textContent =
-      error.name === "NotAllowedError" ? "Tap to play our song ♫" : "Tap to retry our song ♫";
-    musicButton.setAttribute("aria-pressed", "false");
     if (error.name !== "NotAllowedError") {
       console.error("The background song could not be played.", error);
     }
   }
 }
 
-musicButton.addEventListener("click", () => {
-  if (backgroundSong.paused) {
-    playBackgroundSong();
-  } else {
-    backgroundSong.pause();
-    musicButton.textContent = "Play our song ♫";
-    musicButton.setAttribute("aria-pressed", "false");
-  }
-});
+document.addEventListener("pointerdown", playBackgroundSong, true);
+document.addEventListener("click", playBackgroundSong, true);
+document.addEventListener("keydown", playBackgroundSong, true);
 
 noButton.addEventListener("pointerenter", moveNoButton);
 noButton.addEventListener("pointerdown", (event) => {
