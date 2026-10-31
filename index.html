@@ -1,0 +1,108 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta
+      name="theme-color"
+      content="#fae8f0"
+    />
+    <meta
+      name="description"
+      content="A little love letter, made just for you."
+    />
+    <title>A little note for you ♡</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500;1,600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <div class="ambient" aria-hidden="true">
+      <div class="ambient__glow ambient__glow--one"></div>
+      <div class="ambient__glow ambient__glow--two"></div>
+      <div class="ambient__glow ambient__glow--three"></div>
+      <div class="ambient__stars"></div>
+      <div class="petals petals--left">✿</div>
+      <div class="petals petals--right">✿</div>
+    </div>
+    <div class="floaties" aria-hidden="true"></div>
+    <div class="confetti-layer" aria-hidden="true"></div>
+    <audio id="background-song" src="assets/our-song.mp3" loop preload="auto"></audio>
+    <button class="music-button" id="music-button" type="button" aria-pressed="false" hidden>
+      Tap to play our song ♫
+    </button>
+
+    <main>
+      <section class="page page--apology is-active" id="apology" aria-labelledby="apology-title">
+        <div class="letter-card apology-card">
+          <div class="card-sparkle card-sparkle--one" aria-hidden="true">✦</div>
+          <div class="card-sparkle card-sparkle--two" aria-hidden="true">✧</div>
+          <div class="tiny-label"><span></span> A LITTLE NOTE FOR YOU <span></span></div>
+          <div class="hero-art" aria-hidden="true">
+            <div class="hero-art__halo"></div>
+            <img src="assets/teddy.svg" alt="" class="teddy teddy--hero" />
+            <span class="hero-heart hero-heart--one">♥</span>
+            <span class="hero-heart hero-heart--two">♥</span>
+            <span class="hero-heart hero-heart--three">♥</span>
+          </div>
+          <h1 id="apology-title" class="apology-copy">
+            <span>Maf krde yaar <span class="inline-emoji">🥺❤️</span></span>
+            <span>Apno se kya narazgi?</span>
+            <span>Itna pyar karta hu tujhse... Please sorry na! <span class="inline-emoji">🥹</span></span>
+            <span class="apology-copy__last">I know maine tumhe hurt kiya aur tumhe rulaya. I am really sorry, . Tum mere liye bahut special ho. <span class="inline-emoji">❤️</span></span>
+          </h1>
+          <div class="button-row">
+            <button class="button button--no" id="no-button" type="button" aria-label="No, move this button">No 😤</button>
+            <button class="button button--yes" id="yes-button" type="button">
+              Okay, maaf kiya i love u too ❤️
+            </button>
+          </div>
+          <p class="card-footnote">from someone who loves you a whole lot <span>♡</span></p>
+        </div>
+        <div class="page-hint" aria-hidden="true">made with all my heart <span>♡</span></div>
+      </section>
+
+      <section class="page page--love" id="love-letter" aria-labelledby="love-title" aria-hidden="true">
+        <div class="love-layout">
+          <div class="love-card letter-card">
+            <div class="tiny-label"><span></span> MY FAVORITE PERSON <span></span></div>
+            <h2 class="sr-only" id="love-title" tabindex="-1">A little more, just for you</h2>
+            <div class="love-lines" aria-live="polite">
+              <p class="love-line">Abbb fir se hum pehle ki tarah baatein kar sakte hain na ok janu wali? 🥺❤️</p>
+              <p class="love-line">Fir se babu sona wale baatein kar sakte hain?</p>
+              <p class="love-line">Main tumhe cutie moti bula sakta hu? 🥹💗</p>
+              <p class="love-line love-line--highlight">I love you cutie motiiiiii yaarrr! 😭❤️</p>
+              <p class="love-line">Tum toh mere liye bachche ki tarah ho na, mera bachhaaa! 🧸</p>
+              <p class="love-line">Please ab maan jao naaa...</p>
+              <p class="love-line">Maf krde yaarrrr!</p>
+              <p class="love-line love-line--final">I LOVE YOU SO MUCHHHH yarr❤️😘</p>
+            </div>
+          </div>
+          <div class="love-art" aria-hidden="true">
+            <div class="love-art__halo"></div>
+            <span class="orbit orbit--one">♥</span>
+            <span class="orbit orbit--two">✦</span>
+            <span class="orbit orbit--three">♡</span>
+            <img src="assets/teddy.svg" alt="" class="teddy teddy--love" />
+            <span class="pop-heart">♥</span>
+          </div>
+        </div>
+        <footer class="love-footer">
+          <div class="footer-rule"><span>♡</span></div>
+          <p class="forever">Forever my Cutie Moti <span>❤️</span></p>
+          <p class="smile-line">Ab ek pyari si smile dedo naaa! <span>🥺💗</span></p>
+          <div class="teddy-note">
+            <img src="assets/teddy.svg" alt="A teddy bear holding a heart" />
+            <p>Maf krke I love u bol... warna teddy ke extra hugs pakke, madam! 🧸💗</p>
+          </div>
+          <button class="replay-button" id="replay-button" type="button">Read my little note again <span>↺</span></button>
+        </footer>
+      </section>
+    </main>
+    <script src="script.js"></script>
+  </body>
+</html>
